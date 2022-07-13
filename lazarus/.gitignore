@@ -1,0 +1,7 @@
+lib/i386-win32 
+backup
+*.o
+*.ppu
+*.lpi
+*.lps
+*.exe
