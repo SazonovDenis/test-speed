@@ -103,9 +103,9 @@ main_primes.exe
 ~~~
 cd lazarus
 
-dcc32 main_horse.dpr
+dcc32 horse.dpr
 
-main_horse.exe
+horse.exe
 ~~~
 
 ##### Prime numbers
@@ -113,9 +113,9 @@ main_horse.exe
 ~~~
 cd lazarus
 
-dcc32 main_primes.dpr
+dcc32 primes.dpr
 
-main_primes.exe
+primes.exe
 ~~~
 
 
