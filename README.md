@@ -28,7 +28,7 @@ cd java/src
 
 javac Horse.java
 
-java Horse
+java Horse 3 4 7
 ~~~
 
 ###### Prime numbers
@@ -38,7 +38,7 @@ cd java/src
 
 javac Primes.java 
 
-java Primes
+java Primes 3 5
 ~~~
 
 #### Rust
@@ -50,7 +50,7 @@ cd rust/src
 
 rustc main_horse.rs
 
-main_horse.exe
+main_horse.exe 3 4 7
 ~~~
 
 ###### Prime numbers
@@ -58,9 +58,9 @@ main_horse.exe
 ~~~
 cd rust/src
 
-rustc main_prime.rs
+rustc main_primes.rs
 
-main_prime.exe
+main_primes.exe 3 5
 ~~~
 
 #### Python
@@ -70,7 +70,7 @@ main_prime.exe
 ~~~
 cd python
 
-python horse.py
+python horse.py 3 4 7
 ~~~
 
 ###### Prime numbers
@@ -78,19 +78,19 @@ python horse.py
 ~~~
 cd python
 
-python prime.py
+python primes.py 3 5
 ~~~
 
-### Lazarus
+#### Lazarus
 
 ###### Knight's tour
 
 ~~~
 cd lazarus
 
-fpc main_horse.lpr
+fpc-B main_horse.lpr
 
-main_horse.exe
+main_horse.exe 3 4 7
 ~~~
 
 ###### Prime numbers
@@ -98,21 +98,21 @@ main_horse.exe
 ~~~
 cd lazarus
 
-fpc main_primes.lpr
+fpc-B main_primes.lpr
 
-main_primes.exe
+main_primes.exe 3 5
 ~~~
 
-### Delphi 7
+#### Delphi 7
 
 ###### Knight's tour
 
 ~~~
 cd lazarus
 
-dcc32 horse.dpr
+dcc32 /b horse.dpr
 
-horse.exe
+horse.exe 3 4 7
 ~~~
 
 ###### Prime numbers
@@ -120,9 +120,21 @@ horse.exe
 ~~~
 cd lazarus
 
-dcc32 primes.dpr
+dcc32 /b primes.dpr
 
-primes.exe
+primes.exe 3 5
 ~~~
 
+### Run parameters explanation
 
+###### Knight's tour
+
+~~~
+horse.exe <attempts count> <board size x> <board size y>
+~~~
+
+###### Prime numbers
+
+~~~
+primes.exe <attempts count> <prime number count for one attempt>
+~~~

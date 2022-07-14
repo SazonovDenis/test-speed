@@ -1,11 +1,12 @@
 # Сравнение скорости языков программирования
 
-В проекте содержится два простых теста для сравнения скорости 
-языков программирования: Java, Python, Rust, Lazarus/Delphi.
+В проекте содержится два простых теста для сравнения скорости языков программирования:
+Java, Python, Rust, Lazarus/Delphi.
 
-Реализовано два теста: 
+Реализовано два теста:
+
 - Поиск всех маршрутов шахматного коня (полным перебором)
-- Печать простых чисел (примитивным алгоритмом) 
+- Печать простых чисел (примитивным алгоритмом)
 
 ### Как запустить
 
@@ -28,7 +29,7 @@ cd java/src
 
 javac Horse.java
 
-java Horse
+java Horse 3 4 7
 ~~~
 
 ###### Простые числа
@@ -38,7 +39,7 @@ cd java/src
 
 javac Primes.java 
 
-java Primes
+java Primes 3 5
 ~~~
 
 #### Rust
@@ -50,7 +51,7 @@ cd rust/src
 
 rustc main_horse.rs
 
-main_horse.exe
+main_horse.exe 3 4 7
 ~~~
 
 ###### Простые числа
@@ -58,9 +59,9 @@ main_horse.exe
 ~~~
 cd rust/src
 
-rustc main_prime.rs
+rustc main_primes.rs
 
-main_prime.exe
+main_primes.exe 3 5
 ~~~
 
 #### Python
@@ -70,7 +71,7 @@ main_prime.exe
 ~~~
 cd python
 
-python horse.py
+python horse.py 3 4 7
 ~~~
 
 ###### Простые числа
@@ -78,19 +79,19 @@ python horse.py
 ~~~
 cd python
 
-python prime.py
+python primes.py 3 5
 ~~~
 
-### Lazarus
+#### Lazarus
 
 ###### Маршруты коня
 
 ~~~
 cd lazarus
 
-fpc main_horse.lpr
+fpc-B main_horse.lpr
 
-main_horse.exe
+main_horse.exe 3 4 7
 ~~~
 
 ###### Простые числа
@@ -98,21 +99,21 @@ main_horse.exe
 ~~~
 cd lazarus
 
-fpc main_primes.lpr
+fpc-B main_primes.lpr
 
-main_primes.exe
+main_primes.exe 3 5
 ~~~
 
-### Delphi 7
+#### Delphi 7
 
 ###### Маршруты коня
 
 ~~~
 cd lazarus
 
-dcc32 horse.dpr
+dcc32 /b horse.dpr
 
-horse.exe
+horse.exe 3 4 7
 ~~~
 
 ###### Простые числа
@@ -120,9 +121,21 @@ horse.exe
 ~~~
 cd lazarus
 
-dcc32 primes.dpr
+dcc32 /b primes.dpr
 
-primes.exe
+primes.exe 3 5
 ~~~
 
+### Пояснение по параметрам запуска
 
+###### Маршруты коня
+
+~~~
+horse.exe <количество запусков> <размер доски x> <размер доски y>
+~~~
+
+###### Простые числа
+
+~~~
+primes.exe <количество запусков> <количество простых чисел в одном запуске>
+~~~
