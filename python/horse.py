@@ -1,7 +1,8 @@
 import datetime
+import sys
 
 
-def print_board(step_no, state, position):
+def print_board(position):
     size_y = len(position)
     size_x = len(position[0])
 
@@ -29,7 +30,7 @@ def step_horce(step_no, state, x0, y0, position):
 
     # ---------------------
     # Print board after my step
-    # print_board(step_no, state, position)
+    # print_board(position)
     # print()
 
     # ---------------------
@@ -64,14 +65,8 @@ def step_horce(step_no, state, x0, y0, position):
     if (steps_done == 0) and (step_no == board_size):
         state["path_count_ok"] = state["path_count_ok"] + 1
         print("Full path count: " + str(state["path_count_ok"]) + "/" + str(state["path_count_total"]))
-        print_board(step_no, state, position)
+        print_board(position)
         print("")
-
-    if (steps_done == 0) and (step_no != board_size):
-        # print("Path faled, path_count_total: " + str(state["path_count_total"]))
-        # print_board(step_no, state, position)
-        # print()
-        pass
 
     # ---------------------
     # Make my step back
@@ -83,7 +78,7 @@ def diff_msec(dt_2, dt_1):
     return done_msec
 
 
-def calc_horse(x0, y0, size_x, size_y):
+def calc_horse(size_x, size_y, x0, y0):
     print("Hello, horse, board " + str(size_x) + "x" + str(size_y))
 
     grid = [[0] * size_x for i in range(size_y)]
@@ -94,15 +89,26 @@ def calc_horse(x0, y0, size_x, size_y):
     step_horce(1, state, x0, y0, grid)
     time_1 = datetime.datetime.now()
 
-    print("Board " + str(size_x) + "x" + str(size_y) + ", full path count: " + str(state["path_count_ok"]) + ", total path count: " + str(
-        state["path_count_total"]))
+    print("Board " + str(size_x) + "x" + str(size_y) + ", full path count: " + str(state["path_count_ok"]) + ", total path count: " + str(state["path_count_total"]))
 
     duration_sec = int(diff_msec(time_1, time_0)) / 1000
     print("duration: " + str(duration_sec) + " sec")
 
 
 def main():
-    calc_horse(0, 0, 4, 7)
+    attempts = int(sys.argv[1])
+    size_x = int(sys.argv[2])
+    size_y = int(sys.argv[3])
+
+    time_0 = datetime.datetime.now()
+    for attempt in range(attempts):
+        calc_horse(size_x, size_y, 0, 0)
+        print()
+    time_1 = datetime.datetime.now()
+
+    duration = int(diff_msec(time_1, time_0)) / 1000
+    print("---")
+    print("Attempts: " + str(attempts) + ", duration: " + str(duration) + " sec")
 
 
 ###

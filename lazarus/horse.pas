@@ -5,7 +5,7 @@ unit horse;
 
 interface
 
-procedure calc_horse(x0: Integer; y0: Integer; size_x: Integer; size_y: Integer);
+procedure calc_horse(size_x: Integer; size_y: Integer; x0: Integer; y0: Integer);
 
 
 implementation
@@ -25,7 +25,22 @@ type
   TBoard = array of array of Integer;
 
 
-procedure print_board(step_no: Integer; var state: TState; var position: TBoard);
+
+//{$IFNDEF FPC}
+function PadLeft(s: String; len: Integer): String;
+var
+  i: integer;
+begin
+  Result:=s;
+  for i:=Length(s)+1 to len do
+  begin
+    Result:=' '+Result;
+  end;
+end;
+//{$ENDIF}
+
+
+procedure print_board(const position: TBoard);
 var
   size_x, size_y: Integer;
   x, y: Integer;
@@ -43,11 +58,11 @@ begin
       v:=position[y][x];
       if (v = 0) then
       begin
-        Write(LeftStr('*', 3) + ' ');
+        Write(PadLeft('*', 3) + ' ');
       end
       else
       begin
-        Write(LeftStr(IntToStr(v), 3) + ' ');
+        Write(PadLeft(IntToStr(v), 3) + ' ');
       end;
       x:=x + 1;
     end;
@@ -73,7 +88,7 @@ begin
 
   // ---------------------
   // Print board after my step
-  // print_board(step_no, position);
+  // print_board(position);
   // Writeln('');
 
   // ---------------------
@@ -117,15 +132,8 @@ begin
   begin
     state.path_count_ok:=state.path_count_ok + 1;
     Writeln('Full path count: '+IntToStr(state.path_count_ok)+'/'+IntToStr(state.path_count_total));
-    print_board(step_no, state, position);
+    print_board(position);
     Writeln('');
-  end;
-
-  if (steps_done = 0) and (step_no <> board_size) then
-  begin
-    //System.out.println("Steps faled");
-    //print_board(step_no, state, position);
-    //System.out.println();
   end;
 
   // ---------------------
@@ -134,7 +142,7 @@ begin
 end;
 
 
-procedure calc_horse(x0: Integer; y0: Integer; size_x: Integer; size_y: Integer);
+procedure calc_horse(size_x: Integer; size_y: Integer; x0: Integer; y0: Integer);
 var
   dt1, dt2: TDateTime;
   duration_sec: Double;

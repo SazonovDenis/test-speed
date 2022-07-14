@@ -6,7 +6,7 @@ unit primes;
 
 interface
 
-procedure print_primes(start_from: Integer);
+procedure print_primes(start_from: Integer; count: Integer);
 
 
 implementation
@@ -35,7 +35,7 @@ begin
 end;
 
 
-procedure print_primes(start_from: Integer);
+procedure print_primes(start_from: Integer; count: Integer);
 var
   dt1, dt2: TDateTime;
   duration: Integer;
@@ -45,7 +45,7 @@ begin
   Writeln('Hello, print_primes!');
 
   n:=start_from;
-  while (True) do
+  while (count>0) do
   begin
     dt1:=Now();
     is_prime:=is_prime_number(n);
@@ -55,6 +55,7 @@ begin
     begin
       duration:=MilliSecondsBetween(dt1, dt2);
       Writeln(IntToStr(n) + ', duration: ' + IntToStr(duration) + ' msec');
+      count:=count-1;
     end;
 
     n:=n + 1;

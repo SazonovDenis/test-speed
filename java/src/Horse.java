@@ -3,7 +3,20 @@ import java.util.*;
 public class Horse {
 
     public static void main(String[] args) {
-        calc_horse(0, 0, 4, 7);
+        int attempts = Integer.parseInt(args[0]);
+        int size_x = Integer.parseInt(args[1]);
+        int size_y = Integer.parseInt(args[2]);
+
+        Date time_0 = new Date();
+        for (int attempt = 0; attempt < attempts; attempt++) {
+            calc_horse(size_x, size_y, 0, 0);
+            System.out.println();
+        }
+        Date time_1 = new Date();
+
+        double duration = (time_1.getTime() - time_0.getTime()) / 1000.0;
+        System.out.println("---");
+        System.out.println(String.format("Attempts: %s, duration: %s sec", attempts, duration));
     }
 
     private static class State {
@@ -11,7 +24,7 @@ public class Horse {
         int path_count_ok = 0;
     }
 
-    private static void calc_horse(int x0, int y0, int size_x, int size_y) {
+    private static void calc_horse(int size_x, int size_y, int x0, int y0) {
         System.out.println(String.format("Hello, horse, board %sx%s", size_x, +size_y));
 
         int[][] grid = new int[size_y][size_x];
@@ -35,7 +48,7 @@ public class Horse {
 
         // ---------------------
         // Print board after my step
-        // print_board(step_no, state, position);
+        // print_board(position);
         // System.out.println();
 
         // ---------------------
@@ -76,14 +89,8 @@ public class Horse {
         if (steps_done == 0 && step_no == board_size) {
             state.path_count_ok = state.path_count_ok + 1;
             System.out.println(String.format("Full path count: %s/%s", state.path_count_ok, state.path_count_total));
-            print_board(step_no, state, position);
+            print_board(position);
             System.out.println();
-        }
-
-        if (steps_done == 0 && step_no != board_size) {
-            //System.out.println("Path faled, path_count_total: " + state.path_count_total);
-            //print_board(step_no, state, position);
-            //System.out.println();
         }
 
         // ---------------------
@@ -91,7 +98,7 @@ public class Horse {
         position[y0][x0] = 0;
     }
 
-    private static void print_board(int step_no, State state, int[][] position) {
+    private static void print_board(int[][] position) {
         int size_y = position.length;
         int size_x = position[0].length;
 
