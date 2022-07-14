@@ -5,3 +5,11 @@ backup
 *.lpi
 *.lps
 *.exe
+
+*.dcu
+*.~???
+*.cfg
+*.dof
+*.dsk
+
+

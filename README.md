@@ -95,3 +95,27 @@ fpc main_primes.lpr
 
 main_primes.exe
 ~~~
+
+### Delphi 7
+
+##### Knight's tour
+
+~~~
+cd lazarus
+
+dcc32 main_horse.dpr
+
+main_horse.exe
+~~~
+
+##### Prime numbers
+
+~~~
+cd lazarus
+
+dcc32 main_primes.dpr
+
+main_primes.exe
+~~~
+
+

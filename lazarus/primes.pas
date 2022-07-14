@@ -1,4 +1,8 @@
 unit primes;
+{$IFDEF FPC}
+{$mode ObjFPC}
+{$ENDIF}
+
 
 interface
 

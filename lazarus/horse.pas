@@ -1,4 +1,7 @@
 unit horse;
+{$IFDEF FPC}
+{$mode ObjFPC}
+{$ENDIF}
 
 interface
 
@@ -40,11 +43,11 @@ begin
       v:=position[y][x];
       if (v = 0) then
       begin
-        Write(PadLeft('*', 3) + ' ');
+        Write(LeftStr('*', 3) + ' ');
       end
       else
       begin
-        Write(PadLeft(IntToStr(v), 3) + ' ');
+        Write(LeftStr(IntToStr(v), 3) + ' ');
       end;
       x:=x + 1;
     end;
