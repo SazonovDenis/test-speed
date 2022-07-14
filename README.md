@@ -1,8 +1,15 @@
 # Programming languages speed compare
 
-## How to run
+Project contains two simple tests to compare speed of different 
+programming languages: Java, Python, Rust, Lazarus/Delphi.
 
-Clone project with all demos
+Two test implemented: 
+- Search all knight's tours (brute-force algorithm)
+- Print prime numbers (naive algorithm) 
+
+### How to run
+
+Clone project with demos:
 
 ~~~
 git clone https://github.com/SazonovDenis/test-speed.git
@@ -10,11 +17,11 @@ git clone https://github.com/SazonovDenis/test-speed.git
 cd test-speed
 ~~~
 
-Compile and run for each language.
+Compile and run for each language (appropriate compiler needed):
 
 #### Java
 
-##### Knight's tour
+###### Knight's tour
 
 ~~~
 cd java/src
@@ -24,7 +31,7 @@ javac Horse.java
 java Horse
 ~~~
 
-##### Prime numbers
+###### Prime numbers
 
 ~~~
 cd java/src
@@ -36,7 +43,7 @@ java Primes
 
 #### Rust
 
-##### Knight's tour
+###### Knight's tour
 
 ~~~
 cd rust/src
@@ -46,7 +53,7 @@ rustc main_horse.rs
 main_horse.exe
 ~~~
 
-##### Prime numbers
+###### Prime numbers
 
 ~~~
 cd rust/src
@@ -58,7 +65,7 @@ main_prime.exe
 
 #### Python
 
-##### Knight's tour
+###### Knight's tour
 
 ~~~
 cd python
@@ -66,7 +73,7 @@ cd python
 python horse.py
 ~~~
 
-##### Prime numbers
+###### Prime numbers
 
 ~~~
 cd python
@@ -76,7 +83,7 @@ python prime.py
 
 ### Lazarus
 
-##### Knight's tour
+###### Knight's tour
 
 ~~~
 cd lazarus
@@ -86,7 +93,7 @@ fpc main_horse.lpr
 main_horse.exe
 ~~~
 
-##### Prime numbers
+###### Prime numbers
 
 ~~~
 cd lazarus
@@ -98,7 +105,7 @@ main_primes.exe
 
 ### Delphi 7
 
-##### Knight's tour
+###### Knight's tour
 
 ~~~
 cd lazarus
@@ -108,7 +115,7 @@ dcc32 horse.dpr
 horse.exe
 ~~~
 
-##### Prime numbers
+###### Prime numbers
 
 ~~~
 cd lazarus
