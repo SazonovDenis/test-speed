@@ -19,12 +19,23 @@ public class Horse {
         System.out.println(String.format("Attempts: %s, duration: %s sec", attempts, duration));
     }
 
-    private static class State {
+    /**
+     * Store for statistic
+     */
+    static class State {
         int path_count_total = 0;
         int path_count_ok = 0;
     }
 
-    private static void calc_horse(int size_x, int size_y, int x0, int y0) {
+    /**
+     * Calc and print all full knight's tours over specified board
+     *
+     * @param size_x board size x
+     * @param size_y board size y
+     * @param x0     tour start cell x
+     * @param y0     tour start cell y
+     */
+    static void calc_horse(int size_x, int size_y, int x0, int y0) {
         System.out.println(String.format("Hello, horse, board %sx%s", size_x, +size_y));
 
         int[][] grid = new int[size_y][size_x];
@@ -52,7 +63,7 @@ public class Horse {
         // System.out.println();
 
         // ---------------------
-        // Try to do next 8 step
+        // Try to do next 8 steps
         int size_y = position.length;
         int size_x = position[0].length;
         int board_size = size_x * size_y;
@@ -81,7 +92,7 @@ public class Horse {
         }
 
         // ---------------------
-        // Whe nave no more steps?
+        // Whe have no more cell to step?
         if (steps_done == 0) {
             state.path_count_total = state.path_count_total + 1;
         }
