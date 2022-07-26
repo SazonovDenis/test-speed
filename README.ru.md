@@ -49,7 +49,7 @@ java Primes 3 5
 ~~~
 cd rust/src
 
-rustc main_horse.rs
+rustc -C opt-level=3 -C debuginfo=0 -C overflow-checks=off main_horse.rs
 
 main_horse.exe 3 4 7
 ~~~
@@ -59,7 +59,7 @@ main_horse.exe 3 4 7
 ~~~
 cd rust/src
 
-rustc main_primes.rs
+rustc -C opt-level=3 -C debuginfo=0 -C overflow-checks=off main_primes.rs
 
 main_primes.exe 3 5
 ~~~
@@ -89,7 +89,7 @@ python primes.py 3 5
 ~~~
 cd lazarus
 
-fpc-B main_horse.lpr
+fpc -B -OWall -CX -XX -Xs- -al -FWmain_horse.wpo main_horse.lpr
 
 main_horse.exe 3 4 7
 ~~~
@@ -99,7 +99,7 @@ main_horse.exe 3 4 7
 ~~~
 cd lazarus
 
-fpc-B main_primes.lpr
+fpc -B -OWall -CX -XX -Xs- -al -FWmain_primes.wpo main_primes.lpr
 
 main_primes.exe 3 5
 ~~~
@@ -111,7 +111,7 @@ main_primes.exe 3 5
 ~~~
 cd lazarus
 
-dcc32 /b horse.dpr
+dcc32 /b -Drelease horse.dpr
 
 horse.exe 3 4 7
 ~~~
@@ -121,7 +121,7 @@ horse.exe 3 4 7
 ~~~
 cd lazarus
 
-dcc32 /b primes.dpr
+dcc32 /b -Drelease primes.dpr
 
 primes.exe 3 5
 ~~~

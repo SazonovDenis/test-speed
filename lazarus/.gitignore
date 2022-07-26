@@ -5,6 +5,8 @@ backup
 *.lpi
 *.lps
 *.exe
+*.s
+*.wpo
 
 *.dcu
 *.~???

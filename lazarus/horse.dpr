@@ -1,6 +1,12 @@
 program main_horse;
 {$APPTYPE CONSOLE}
 
+{$IFDEF release} 
+{$R-,Q-,S-,O+} 
+{$ELSE} 
+{$R+,Q+,S+,O-} 
+{$ENDIF}
+
 uses
   horse,
   DateUtils,
