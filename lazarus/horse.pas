@@ -131,9 +131,9 @@ begin
   if (steps_done = 0) and (step_no = board_size) then
   begin
     state.path_count_ok:=state.path_count_ok + 1;
-    Writeln('Full path count: '+IntToStr(state.path_count_ok)+'/'+IntToStr(state.path_count_total));
-    print_board(position);
-    Writeln('');
+    // Writeln('Full path count: '+IntToStr(state.path_count_ok)+'/'+IntToStr(state.path_count_total));
+    // print_board(position);
+    // Writeln('');
   end;
 
   // ---------------------

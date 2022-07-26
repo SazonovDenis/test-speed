@@ -69,9 +69,9 @@ fn step_horce(step_no: i16, state: &mut State, x0: i16, y0: i16, position: &mut 
 
     if steps_done == 0 && step_no == board_size {
         state.path_count_ok = state.path_count_ok + 1;
-        println!("Full path count: {}/{}", state.path_count_ok, state.path_count_total);
-        print_board(position);
-        println!();
+        // println!("Full path count: {}/{}", state.path_count_ok, state.path_count_total);
+        // print_board(position);
+        // println!();
     }
 
     // ---------------------

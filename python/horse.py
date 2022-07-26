@@ -64,9 +64,9 @@ def step_horce(step_no, state, x0, y0, position):
 
     if (steps_done == 0) and (step_no == board_size):
         state["path_count_ok"] = state["path_count_ok"] + 1
-        print("Full path count: " + str(state["path_count_ok"]) + "/" + str(state["path_count_total"]))
-        print_board(position)
-        print("")
+        # print("Full path count: " + str(state["path_count_ok"]) + "/" + str(state["path_count_total"]))
+        # print_board(position)
+        # print("")
 
     # ---------------------
     # Make my step back

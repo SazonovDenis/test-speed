@@ -99,9 +99,9 @@ public class Horse {
 
         if (steps_done == 0 && step_no == board_size) {
             state.path_count_ok = state.path_count_ok + 1;
-            System.out.println(String.format("Full path count: %s/%s", state.path_count_ok, state.path_count_total));
-            print_board(position);
-            System.out.println();
+            // System.out.println(String.format("Full path count: %s/%s", state.path_count_ok, state.path_count_total));
+            // print_board(position);
+            // System.out.println();
         }
 
         // ---------------------
